@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+            min-height: 100vh;        /* ADICIONE - altura mínima = tela toda */
+    display: flex;            /* ADICIONE */
+    flex-direction: column;   /* ADICIONE */
+    margin: 0;
+    }
+
+    header {
+        background: white;
+        padding: 25px 30px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .Logo {
+        font-size: 35px;
+        font-weight: bold;
+        color: #1a73e8;
+        margin-left: 0;
+    }
+
+    .Mais {
+        background: #1a73e8;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .Mais:hover {
+        background: #1557b0;
+    }
+
+    /* CONTAINER PRINCIPAL - junta as duas colunas */
+    .container-principal {
+        display: flex;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        flex: 1;
+    }
+
+    /* COLUNA PRINCIPAL (ESQUERDA) - threads */
+    .conteudo1 {
+        flex: 2; /* Ocupa 2/3 do espaço */
+    }
+
+    /* SIDEBAR (DIREITA) */
+    .sidebar {
+        flex: 1; /* Ocupa 1/3 do espaço */
+        position: sticky;
+        top: 20px;
+        align-self: flex-start;
+    }
+
+    .threads {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        transition: box-shadow 0.2s;
+    }
+
+    .threads:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .avatar {
+        font-size: 48px;
+        display: inline-block;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+
+    .meta {
+        display: inline-block;
+        color: #65676b;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    .titulo {
+        font-size: 18px;
+        color: #050505;
+        margin: 12px 0 8px 0;
+        cursor: pointer;
+    }
+
+    .titulo:hover {
+        color: #1a73e8;
+    }
+
+    .conteudo {
+        color: #65676b;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .divisão {
+        margin: 20px 0;
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #ddd, transparent);
+    }
+
+    .pesquisar {
+        border-radius: 10rem;
+        text-align: center;
+        margin: 0;
+        padding: 8px 16px;
+        width: 250px;
+        border: 1px solid #ddd;
+        outline: none;
+    }
+
+    .pesquisar:focus {
+        border-color: #1a73e8;
+    }
+
+    .logo-direita {
+        height: 80px;
+        width: auto;
+        position:absolute;
+        right: 20px;
+        top: 2%;
+    }
+
+    /* ESTILOS DA SIDEBAR */
+    .card-sidebar {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .card-sidebar .icon {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .card-sidebar .texto {
+        color: #050505;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .container-principal {
+            flex-direction: column;
+        }
+        
+        .sidebar {
+            position: static;
+        }
+    }
+
+    a {
+    text-decoration: none;
+}
+
+/* Mantém o hover do título funcionando */
+.titulo:hover {
+    color: #1a73e8;
+}
+
+footer {
+    background-color: gray;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    gap: 10px;           /* Espaço entre as imagens e o texto */
+}
+
+.about {
+    color: rgb(110, 110, 110);
+    font-size: 24px;
+    margin-left: auto;   /* Joga o texto para a direita */
+}
+
+.ceara, .cpm {
+    height: 50px;        /* Tamanho pequeno */
+    width: auto;
+}
+
+.ceara {
+    margin-left: 0;      /* Imagem 1 na esquerda */
+}
+
+.cpm {
+    margin-left: 2px;    /* Grudada na primeira imagem */
+}
+/* Container invisível para as imagens ficarem juntas */
+footer div:first-of-type {
+    display: flex;
+    gap: 1px;            /* Espaço pequeno entre as imagens */
+    align-items: center;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <input class="pesquisar" placeholder="pesquisa">
+        <img src="https://i.imghippo.com/files/jzMT2159Oc.png" alt="Logo" class="logo-direita">
+
+    </header>
+
+    <!-- CONTAINER PRINCIPAL com duas colunas -->
+    <div class="container-principal">
+        
+        <!-- COLUNA PRINCIPAL (ESQUERDA) -->
+        <div class="conteudo1">
+            <div class="threads">
+                <div class="avatar">👩‍🏫</div>
+                <div class="meta"> Fulana</div>
+                <a href="main.html">
+                <h1 class="titulo" >Sugestões para o desenvolvimento do pensamento critico e do dialogo na escola</h1>
+                </a>
+                <div class="conteudo"></div>
+            </div>
+
+            <hr class="divisão">
+
+            <div class="threads">
+                <div class="avatar">🧑🏻‍🏫</div>
+                <div class="meta"> Fulano</div>
+                <a href="post.html">
+                <h1 class="titulo"> Sugestões para a melhoria da biblioteca da escola</h1>
+                </a>
+                <div class="conteudo">Compartilhem suas ideias!</div>
+            </div>
+            <div class="threads">
+    <div class="avatar">👩🏻‍🏫</div>
+    <div class="meta"> Professora Carla</div>
+    <a href="post2.html">
+    <h1 class="titulo">Ideias para a festa junina da escola</h1>
+    </a>
+    <div class="conteudo">Queremos sugestões de brincadeiras e comidas típicas!</div>
+</div>
+
+<div class="threads">
+    <div class="avatar">🧑🏻‍🏫</div>
+    <div class="meta"> Professor Ricardo</div>
+    <a href="post3.html">
+    <h1 class="titulo">Como tornar as aulas de matemática mais dinâmicas?</h1>
+    </a>
+    <div class="conteudo">Compartilhem metodologias que funcionam em sala</div>
+</div>
+        </div>
+
+        <!-- COLUNA SIDEBAR (DIREITA) -->
+        <div class="sidebar">
+            <div class="card-sidebar">
+                <div class="icon">📣</div>
+                <div class="texto">Mural de avisos</div>
+            </div>
+            <div class="card-sidebar">
+                <div class="icon">📚</div>
+                <div class="texto">A escola apresenta a nova biblioteca digital com 1000 volumes</div>
+            </div>
+            <div class="card-sidebar">
+                <div class="icon">📅</div>
+                <div class="texto">De dança até conscientização, a Sacc iniciara na proxima semana, confiram o cronograma</div>
+            </div>
+        </div>
+    </div>
+
+<footer>
+<img src="https://i.imghippo.com/files/FXAx7187fmk.png" class="ceara">
+<img src="https://i.imghippo.com/files/z1853IE.png" class="cpm">
+<div class="about"> Este site é um prototipo em desenvolvimento para a Sacc</div>
+</footer>
+</body>
+</html>
