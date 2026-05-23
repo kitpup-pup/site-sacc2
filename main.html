@@ -284,6 +284,41 @@ header {
         html {
             scroll-behavior: smooth;
         }
+    footer {
+    background-color: gray;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;           /* Espaço entre as imagens e o texto */
+}
+
+.about {
+    color: rgb(211, 211, 211);
+    font-size: 20px;
+    margin-left: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/* Joga o texto para a direita */
+}
+
+.ceara, .cpm {
+    height: 50px;        /* Tamanho pequeno */
+    width: auto;
+}
+
+.ceara {
+    margin-left: 0;      /* Imagem 1 na esquerda */
+}
+
+.cpm {
+    margin-left: 2px;    /* Grudada na primeira imagem */
+}
+/* Container invisível para as imagens ficarem juntas */
+footer div:first-of-type {
+    display: flex;
+    gap: 1px;            /* Espaço pequeno entre as imagens */
+    align-items: center;
+}
 </style>
 </head>
 
