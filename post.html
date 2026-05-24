@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
 <style>
-         /* ============================================
-           RESET / GLOBAL
-        ============================================ */
         * {
             margin: 0;
             padding: 0;
@@ -51,7 +48,6 @@ header {
         top: 2%;
     }
 
-/* Botão "mais" - NA ESQUERDA */
 .Mais {
     background-color: #ffaf00;
     border: none;
@@ -73,7 +69,6 @@ header {
     color: white;
 }
 
-/* Logo central Falaê */
 .Logo {
     font-size: 10rem;
     font-weight: bold;
@@ -86,39 +81,30 @@ header {
     z-index: 1;
 }
 
-/* Logo da direita */
 .logo-direita {
-    height: 100px;  /* Ajuste conforme o tamanho da sua imagem */
+    height: 100px;  
     width: auto;
     z-index: 2;
       background-color: #ffffff;
             border-radius:60%;
 }
 
-/* Container para a logo da direita */
 .direita {
     display: flex;
     align-items: center;
 }
 
-        /* Container vazio para balancear o flexbox */
         .espaco {
             width: 100px;
             visibility: hidden;
         }
 
-        /* ============================================
-           CONTAINER PRINCIPAL (para dar margem só nos posts)
-        ============================================ */
         .container-principal {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
 
-        /* ============================================
-           CARDS (post, comentario, resposta)
-        ============================================ */
         .post, .comentario, .resposta {
             background-color: white;
             border-radius: 8px;
@@ -132,16 +118,12 @@ header {
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Efeito ao passar o mouse */
         .post:hover, .comentario:hover, .resposta:hover {
             transform: translateX(4px);
             transition: 0.2s;
             border-left-color: #0097b2;
         }
 
-        /* ============================================
-           AVATAR
-        ============================================ */
         .avatar {
             width: 42px;
             height: 42px;
@@ -154,9 +136,6 @@ header {
             flex-shrink: 0;
         }
 
-        /* ============================================
-           CONTEÚDO DO POST
-        ============================================ */
         .conteudo {
             flex: 1;
             min-width: 200px;
@@ -169,9 +148,6 @@ header {
             font-weight: 500;
         }
 
-        /* ============================================
-           META (tempo, pontos)
-        ============================================ */
         .meta {
             font-size: 12px;
             color: #1f1f1f;
@@ -179,9 +155,6 @@ header {
             margin-left: 54px;
         }
 
-        /* ============================================
-           SISTEMA DE VOTOS (setas lado a lado)
-        ============================================ */
         .votos {
             display: flex;
             flex-direction: row;
@@ -202,7 +175,6 @@ header {
             font-weight: bold;
         }
 
-        /* Efeito hover nos botões de voto */
         .votos button:first-child:hover {
             background-color: #ffaf00;
             color: #071a69;
@@ -217,14 +189,10 @@ header {
             transform: scale(1.05);
         }
 
-        /* Efeito de clique */
         .votos button:active {
             transform: scale(0.95);
         }
 
-        /* ============================================
-           INDENTAÇÃO (thread)
-        ============================================ */
         .comentario {
             margin-left: 48px;
             border-left-color: #ffaf00;
@@ -235,9 +203,6 @@ header {
             border-left-color: #0097b2;
         }
 
-        /* ============================================
-           RESPONSIVIDADE
-        ============================================ */
         @media (max-width: 768px) {
             .container-principal {
                 margin: 10px auto;
@@ -266,7 +231,6 @@ header {
                 margin-left: 48px;
             }
             
-            /* Ajusta o texto do logo em telas menores */
             .Logo {
                 font-size: 42px;
             }
@@ -280,7 +244,6 @@ header {
             }
         }
 
-        /* Scroll suave */
         html {
             scroll-behavior: smooth;
         }
