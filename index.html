@@ -14,10 +14,10 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f0f2f5;
-            min-height: 100vh;        
-    display: flex;            
-    flex-direction: column; 
-    margin: 0;
+        min-height: 100vh;        
+        display: flex;            
+        flex-direction: column; 
+        margin: 0;
     }
 
     header {
@@ -30,9 +30,11 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        gap: 20px; /* Adicionado para dar espaço entre o logo e a barra de pesquisa */
     }
 
-    .Logo {
+    /* Ajustado para "logo" em minúsculo combinando com a class da tag */
+    .logo {
         font-size: 35px;
         font-weight: bold;
         color: #1a73e8;
@@ -230,15 +232,13 @@ footer div:first-of-type {
 
 <body>
     <header>
+        <div class="logo">Voz Estudantil</div>
         <input class="pesquisar" placeholder="pesquisa">
         <img src="https://i.imghippo.com/files/jzMT2159Oc.png" alt="Logo" class="logo-direita">
-
     </header>
 
-    <!-- CONTAINER PRINCIPAL com duas colunas -->
     <div class="container-principal">
         
-        <!-- COLUNA PRINCIPAL (ESQUERDA) -->
         <div class="conteudo1">
             <div class="threads">
                 <div class="avatar">👩‍🏫</div>
@@ -282,7 +282,6 @@ footer div:first-of-type {
             <hr class="divisão">
         </div>
 
-        <!-- COLUNA SIDEBAR (DIREITA) -->
         <div class="sidebar">
 <div class="card-sidebar">
     <div class="icon">📣</div>
@@ -307,7 +306,7 @@ footer div:first-of-type {
 
 <div class="card-sidebar">
     <div class="icon">🎓</div>
-    <div class="texto">Palestra sobre carreiras: dia 15/05, às 14h no auditório.</div>
+    <div class="texto">Palestra sobre careers: dia 15/05, às 14h no auditório.</div>
 </div>
 
         </div>
