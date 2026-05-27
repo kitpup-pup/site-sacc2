@@ -38,7 +38,7 @@
 }
     
     .logo {
-        font-size: 30px;
+        font-size: 45px;
         font-weight: bold;
         color: #1a73e8;
         position: absolute;
@@ -57,6 +57,34 @@
 
     .Mais:hover {
         background: #1557b0;
+    }
+
+    /* Botão de Ouvidoria */
+    .btn-ouvidoria {
+        background: #1a73e8;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-decoration: none;
+    }
+
+    .btn-ouvidoria:hover {
+        background: #1557b0;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-ouvidoria:active {
+        transform: scale(0.98);
     }
 
     .container-principal {
@@ -176,49 +204,56 @@
         .sidebar {
             position: static;
         }
+
+        .btn-ouvidoria {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+
+        .btn-ouvidoria span {
+            display: none;
+        }
     }
 
+    .titulo:hover {
+        color: #1a73e8;
+    }
 
+    footer {
+        background-color: gray;
+        margin-top: 20px;
+        padding: 10px 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-.titulo:hover {
-    color: #1a73e8;
-}
+    .about {
+        color: rgb(211, 211, 211);
+        font-size: 20px;
+        margin-left: auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-footer {
-    background-color: gray;
-    margin-top: 20px;
-    padding: 10px 20px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    .ceara, .cpm {
+        height: 50px;
+        width: auto;
+    }
 
-.about {
-    color: rgb(211, 211, 211);
-    font-size: 20px;
-    margin-left: auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    .ceara {
+        margin-left: 0;
+    }
 
-.ceara, .cpm {
-    height: 50px;
-    width: auto;
-}
+    .cpm {
+        margin-left: 2px;
+    }
 
-.ceara {
-    margin-left: 0;
-}
-
-.cpm {
-    margin-left: 2px;
-}
-
-footer div:first-of-type {
-    display: flex;
-    gap: 1px;
-    align-items: center;
-}
+    footer div:first-of-type {
+        display: flex;
+        gap: 1px;
+        align-items: center;
+    }
 </style>
 </head>
 
@@ -226,6 +261,12 @@ footer div:first-of-type {
     <header>
         <div class="logo">Voz Estudantil</div>
         <input class="pesquisar" placeholder="pesquisa">
+        
+        <!-- Botão de Ouvidoria - Link para ouvidoria.html -->
+        <a href="ouvidoria.html" class="btn-ouvidoria">
+            📢 Ouvidoria
+        </a>
+        
         <img src="https://i.imghippo.com/files/jzMT2159Oc.png" alt="Logo" class="logo-direita">
     </header>
 
