@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouvidoria - Voz Estudantil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdef5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .aviso-anonimo {
+            background: #e3f2fd;
+            border-left: 4px solid #1a73e8;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #0d47a1;
+        }
+
+        .aviso-anonimo span {
+            font-size: 24px;
+        }
+
+        .formulario {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn-enviar:active {
+            transform: translateY(0);
+        }
+
+        .btn-voltar {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background: #7f8c8d;
+        }
+
+        .footer-form {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            .formulario {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span>📢</span>
+                Ouvidoria
+            </h1>
+            <p>Voz Estudantil - Sua opinião é importante para nós!</p>
+        </div>
+
+        <div class="aviso-anonimo">
+            <span>🔒</span>
+            <div>
+                <strong>Manifestação anônima</strong><br>
+                Sua identidade será preservada. Nenhum dado pessoal será solicitado ou armazenado.
+            </div>
+        </div>
+
+        <div class="formulario">
+            <form id="formOuvidoria">
+                <div class="form-group">
+                    <label for="tipo">Tipo de manifestação *</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="sugestao">💡 Sugestão</option>
+                        <option value="reclamacao">⚠️ Reclamação</option>
+                        <option value="elogio">👍 Elogio</option>
+                        <option value="denuncia">🔍 Denúncia</option>
+                        <option value="informacao">ℹ️ Solicitação de Informação</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto *</label>
+                    <input type="text" id="assunto" name="assunto" required placeholder="Digite o assunto da sua manifestação">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" required placeholder="Descreva sua manifestação detalhadamente..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Manifestação Anônima</button>
+                <button type="button" class="btn-voltar" onclick="window.location.href='index.html'">Voltar ao início</button>
+            </form>
+            <div class="footer-form">
+                <p>✅ Sua mensagem é anônima e será tratada com sigilo</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('formOuvidoria');
+
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            
+            // Validar campos
+            const tipo = document.getElementById('tipo').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            if (!tipo || !assunto || !mensagem) {
+                alert('⚠️ Por favor, preencha todos os campos!');
+                return;
+            }
+            
+            // Coletar dados
+            const dados = {
+                tipo: document.getElementById('tipo').options[document.getElementById('tipo').selectedIndex].text,
+                assunto: document.getElementById('assunto').value,
+                mensagem: document.getElementById('mensagem').value,
+                data: new Date().toLocaleString('pt-BR'),
+                anonimo: true
+            };
+            
+            // Mostrar no console
+            console.log('Manifestação Anônima:', dados);
+            
+            // Mensagem de sucesso
+            alert(`✅ Manifestação anônima enviada com sucesso!\n\nTipo: ${dados.tipo}\nAssunto: ${dados.assunto}\n\nSua identidade permanecerá em sigilo. Agradecemos sua contribuição!`);
+            
+            // Limpar formulário
+            form.reset();
+            
+            // Redirecionar para a página inicial após 2 segundos
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
